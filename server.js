@@ -1,12 +1,3 @@
-const instana = require('@instana/collector');
-// init tracing
-// MUST be done before loading anything else!
-instana({
-    tracing: {
-        enabled: true
-    }
-});
-
 const { MongoClient, ObjectId } = require('mongodb');
 const { createClient } = require('redis');
 const bodyParser = require('body-parser');
@@ -36,20 +27,6 @@ app.use(expLogger);
 app.use((req, res, next) => {
     res.set('Timing-Allow-Origin', '*');
     res.set('Access-Control-Allow-Origin', '*');
-    next();
-});
-
-app.use((req, res, next) => {
-    let dcs = [
-        "asia-northeast2",
-        "asia-south1",
-        "europe-west3",
-        "us-east1",
-        "us-west1"
-    ];
-    let span = instana.currentSpan();
-    span.annotate('custom.sdk.tags.datacenter', dcs[Math.floor(Math.random() * dcs.length)]);
-
     next();
 });
 
