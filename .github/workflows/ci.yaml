@@ -2,7 +2,7 @@ name: contionuos integration
 on: [workflow_dispatch]
 jobs:
   docker:
-    uses: RoboShop1/github-reusable/.github/workflows/docker-ci@main
+    uses: RoboShop1/github-reusable/.github/workflows/docker-ci.yaml@main
     with:
       component_name: ${{ github.repository }}
     secrets: inherit
