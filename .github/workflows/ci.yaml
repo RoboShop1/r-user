@@ -8,3 +8,5 @@ jobs:
       - one:
           run: |
             echo "component - ${{ vars.component }}"
+            
+            #
