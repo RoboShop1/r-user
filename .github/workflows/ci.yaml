@@ -4,6 +4,6 @@ jobs:
   docker:
     uses: RoboShop1/github-reusable/.github/workflows/docker-ci.yaml@main
     with:
-      component_name: ${{ github.repository }}
+      image_name: ${{ github.repository }}
     secrets: inherit
 
