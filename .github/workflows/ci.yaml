@@ -2,7 +2,7 @@ name: contionuos integration
 on: [push]
 jobs:
   CI-job:
-    runs-on: roboshop
+    runs-on: [self-hosted]
     steps:
       - name: sample
         run: |
