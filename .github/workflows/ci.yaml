@@ -3,6 +3,8 @@ on:
     pull_request:
       branches:
         - main
+      path:
+        - "Dockerfile"
 jobs:
   CI-job:
     runs-on: ubuntu-latest
