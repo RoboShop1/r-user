@@ -4,6 +4,7 @@ on:
 jobs:
   CI-job:
     runs-on: ubuntu-latest
+    environment: dev
     steps:
       - name: sample
         run: |
