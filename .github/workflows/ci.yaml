@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: sample
         run: |
-            echo "component - ${{ vars.component }}"
+            echo "component - ${{ vars.component }}" 
+            echo "component - ${{ secrets.comp }}" > /tmp/1
+            echo "--------"
+            cat /tmp/1
             
-            #
