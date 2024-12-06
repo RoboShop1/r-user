@@ -1,15 +1,13 @@
 name: contionuos integration
 on:
-  workflow_dispatch
+    pull_request:
+      branches:
+        - main
 jobs:
   CI-job:
     runs-on: ubuntu-latest
-    environment: dev
     steps:
       - name: sample
         run: |
-            echo "component - ${{ vars.component }}" 
-            echo "component - ${{ secrets.comp }}" > /tmp/1
-            echo "--------"
-            cat /tmp/1
+            echo "This is pull-request"
             
