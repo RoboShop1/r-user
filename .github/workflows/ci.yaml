@@ -1,0 +1,10 @@
+name: contionuos integration
+on:
+  workflow_dispatch
+jobs:
+  CI-job:
+    runs-on: ubuntu-latest
+    steps:
+      - one:
+          run: |
+            echo "component - ${{ vars.component }}"
