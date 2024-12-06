@@ -1,10 +1,9 @@
 name: contionuos integration
-on: [push]
+on: [workflow_dispatch]
 jobs:
-  CI-job:
-    runs-on: [self-hosted]
-    steps:
-      - name: sample
-        run: |
-            echo "This is pull-request"
-            
+  docker:
+    uses: RoboShop1/github-reusable/.github/workflows/docker-ci@main
+    with:
+      component_name: ${{ github.repository }}
+    secrets: inherit
+
