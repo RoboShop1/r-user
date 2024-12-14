@@ -1,0 +1,10 @@
+name: dev-cart-deploy
+on:
+  workflow_dispatch:
+jobs:
+  dev-deploy:
+    uses:  RoboShop1/github-reusable/.github/workflows/argocd.yaml@main
+    with:
+      component: user
+      env: dev
+
